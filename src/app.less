@@ -22,13 +22,22 @@ html,body {
 
 #app {
 	.position(relative);
+	min-width: 1000px;
+	min-height: 750px;
  	width: @w;
  	height: @w;
     background-image: url('~@/assets/background.png');
 }	
 
-.form-title {
+.form-title{
 	text-align: center;
 	line-height: 120px;
 	.basic(28px;#fff;bold;)
+}
+
+.form-bottom {
+	margin-top: 510px;
+	text-align: center;
+	line-height: 120px;
+	.basic(14px;#fff;bold;)
 }
