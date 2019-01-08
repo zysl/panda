@@ -7,8 +7,8 @@
 			<label>密&#12288;码<input type="text" placeholder="请输入密码"></label>
 		</p>
 		<p>	
-			<a><i class="icon icon-checked"></i>记住密码</a>
-			<a href="javascript:void(0)">快速注册</a>
+			<a v-on:click="remeberPwd"><i v-bind:class="{'icon':true,'icon-checked':checked}"></i>记住密码</a>
+			<a href="javascript:void(0)" v-on:click="fastRegister">快速注册</a>
 		</p>
 		
 		<p>
@@ -16,7 +16,11 @@
 		</p>
 
 		<p>
-			<label>--------▲第三方登录▲--------</label>
+			<a href="javascript:void(0)">忘记密码?</a>
+		</p>
+
+		<p>
+			<label>-第三方登录-</label>
 		</p>
 
 		<p>
@@ -40,7 +44,25 @@
 
 <script>
 export default {
+	props:['registerTitle','isLoginShow','isRegisterShow'],
+	data() {
+		return {
+			msg:'个人注册',
+			isFlag:true,
+			checked:false
+		}
+	},
 
+	methods:{
+		fastRegister:function() {
+			this.$emit('change',this.msg)
+			this.$emit('holdShow',this.isFlag)
+		},
+
+		remeberPwd:function() {
+			this.checked = !this.checked;
+		}
+	}
 }
 </script>
 
