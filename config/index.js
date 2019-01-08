@@ -7,7 +7,7 @@ const path = require('path')
 module.exports = {
   dev: {
 
-    // Paths
+    // Pathsimport 'iview/dist/styles/iview.css';
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {},

@@ -8,6 +8,8 @@
         </ul>
 
         <p>child tell me : {{ childWords }}</p>
+
+
         <!-- <router-view/> -->
     </div>
 </template>
@@ -16,16 +18,16 @@
 import HelloWorld from './components/HelloWorld'
 import Store from './localStore'
 
-console.log(Store)
 export default {
     components:{
         HelloWorld
     },
+
     data() {
         return {
-          items:Store.fetch(),
-          isVal:'',
-          childWords:''
+            items:Store.fetch(),
+            isVal:'',
+            childWords:''
         }
     },
     methods:{
@@ -44,6 +46,7 @@ export default {
         listenToMyBoy:function(msg) {
             this.childWords = msg
         }
+
     },
 
     watch:{
