@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+@fw:14px;
+
+.area(@w:1000px;@h:500px) {
+	width: @w;
+	height: @h;
+}
+
+.border-radius(@r:5px) {
+	border-radius:@r;
+}
+
+.display(@block:block) {
+	display: @block
+}
+
+.basic(@s:14px;@c:#fff;@bod:bold;) {
+	font-size: @s;
+	color: @c;
+	font-family: "SF Pro SC,SF Pro Display,SF Pro Icons,AOS Icons,PingFang SC,Helvetica Neue,Helvetica,Arial,sans-serif";
+	font-weight: @bod;
+	letter-spacing: 2px;
+}
+
+.position(@p:absolute;@t:50%;@l:50%;@ml:-100px;@mt:-100px) {
+	position: @p;
+	top: @t;
+	left:@l;
+	margin-left: -@ml;
+	margin-top: -@mt;
+}
+
+.float(@lr:left) {
+	float: @lr;
+}
+
+.login {
+	.position(absolute;50%;50%;500px;250px);
+	.area();
+	background: rgba(0,0,0,0.6);
+    vertical-align: middle;
+	.border-radius();
+	
+	p {
+		margin-top: 25px;
+		text-align: center;
+		&:first-child {
+			margin-top: 50px;
+		}
+	}
+
+	input {
+		margin-left: 20px;
+		padding-left: 10px; 
+		width: 350px;
+		height: 35px;
+		border:1px solid #f1f1f1;
+		outline: none;
+	}
+
+	.span() {
+		.display(inline-block);
+		.basic(@fw;#fff;initial)
+	}
+
+	a {
+		text-decoration: none;
+		.float(left);
+		.span();
+		cursor: pointer;
+		&:first-child {
+			margin-left: 374px;
+		}
+
+		&:last-child {
+			.float(right);
+			margin-right: 285px;
+		}
+
+		.icon {
+			position:absolute;
+			margin-left: -22px;
+			margin-top: 1px;
+			font-style: initial;
+			.display(inline-block);
+			.basic(@fw+2;#fff;initial);
+			width: @fw+6;
+			height: @fw+6;
+			background:url(~@/assets/images/icon/login-unselect.png) center no-repeat;
+			background-size:cover;
+		}
+
+		.icon.icon-checked {
+			.icon;
+			background:url(~@/assets/images/icon/login-select.png) center no-repeat;
+		}
+	}
+
+	label {
+		.span();
+	}
+}

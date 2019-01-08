@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+@w:100%;
+@h:100%;
+
+html,body {
+	width: @w;
+	height: @w;
+}
+
+.position(@p:relative;) {
+	position: relative;
+}
+
+.basic(@s:14px;@c:#fff;@bod:bold;) {
+	font-size: @s;
+	color: @c;
+	font-family: "SF Pro SC,SF Pro Display,SF Pro Icons,AOS Icons,PingFang SC,Helvetica Neue,Helvetica,Arial,sans-serif";
+	font-weight: @bod;
+	letter-spacing: 2px;
+}
+
+#app {
+	.position(relative);
+ 	width: @w;
+ 	height: @w;
+    background-image: url('~@/assets/background.png');
+}	
+
+.form-title {
+	text-align: center;
+	line-height: 120px;
+	.basic(28px;#fff;bold;)
+}
