@@ -35,7 +35,7 @@
 	float: @lr;
 }
 
-.login {
+.register {
 	.position(absolute;50%;50%;500px;250px);
 	.area();
 	background: rgba(0,0,0,0.6);
@@ -44,26 +44,32 @@
 	
 	p {
 		margin-top: 25px;
-		padding-right: 70px;
+		padding-right: 45px;
 		text-align: center;
 		&:first-child {
 			margin-top: 50px;
 		}
 
-		&:nth-child(3) {
-			height: 25px;
+		&:nth-child(2) {
+			input {
+				width: 260px;
+			}
+
+			span {
+				height: 35px;
+			    line-height: 33px;
+			    border: 1px solid #eaeefb;
+			    border-left:0;
+			    padding: 0 3px;
+			    width: 82px;
+			    cursor: pointer;
+			}
 		}
 
 		&:nth-child(5) {
+    		padding-right: 305px;
 			height: 30px;
-		}
-
-		&:nth-child(6) {
-			padding-right:0;
-		}
-
-		&:last-child {
-			padding-right:0;
+			text-align: right;
 		}
 
 		button {
@@ -77,28 +83,12 @@
 		    cursor: pointer;
 		}
 
-		li {
-			width: 70px;
-			.float(left);
-			margin-left: 80px;
-			list-style: none;
-			text-align: center;
-			.basic(@fw;#fff;initial);
-			line-height: 35px;
-			cursor: pointer;
-			img {
-				margin-left: 10px;
-				.display(block);
-				width: 50px;
-			}
-
-			&:first-child {
-				margin-left: 320px;
-			}
+		span {
+			.span()
 		}
 	}
 
-	input {
+	input[type="text"] {
 		margin-left: 20px;
 		padding-left: 10px; 
 		width: 350px;
@@ -111,37 +101,39 @@
 		.basic(@fw;#fff;initial)
 	}
 
-	a {
-		text-decoration: none;
-		.float(left);
+	.file,.glogin {
 		.span();
+		text-decoration: none;
+		color: #409eff;
+	}
+
+	.icon {
+		position: absolute;
+    	margin-left: -95px;
+		margin-top: 3px;
+		font-style: initial;
+		.display(inline-block);
+		.basic(@fw+2;#fff;initial);
+		width: @fw+6;
+		height: @fw+6;
+		background:url(~@/assets/images/icon/login-unselect.png) center no-repeat;
+		background-size:cover;
 		cursor: pointer;
-		&:first-child {
-			margin-left: 340px;
-		}
+	}
 
-		&:last-child {
-			.float(right);
-			margin-right: 250px;
-		}
+	.icon.icon-checked {
+		.icon;
+		background:url(~@/assets/images/icon/login-select.png) center no-repeat;
+	}
 
-		.icon {
-			position:absolute;
-			margin-left: -22px;
-			margin-top: 1px;
-			font-style: initial;
-			.display(inline-block);
-			.basic(@fw+2;#fff;initial);
-			width: @fw+6;
-			height: @fw+6;
-			background:url(~@/assets/images/icon/login-unselect.png) center no-repeat;
-			background-size:cover;
-		}
+	.read {
+		margin-left: -70px;
+	}
 
-		.icon.icon-checked {
-			.icon;
-			background:url(~@/assets/images/icon/login-select.png) center no-repeat;
-		}
+	em {
+		position:absolute;
+		.basic(12px;#F56C6C;initial);
+		font-style: initial;
 	}
 
 	label {

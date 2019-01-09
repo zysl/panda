@@ -2,7 +2,7 @@
     <div id="app">
         <p class="form-title">{{registerTitle}}</p>
         <ysl-login v-show="isLoginShow" v-bind:register="registerTitle" v-on:change="changeTitle" v-on:holdShow="showHide"></ysl-login>
-        <ysl-register v-show="isRegisterShow"></ysl-register>
+        <ysl-register v-show="isRegisterShow" v-on:change="changeTitle" v-on:registerShow="showRegister"></ysl-register>
         <p class="form-bottom">&copy;南京黎阳工作室{{newYear}}-{{endYear}}</p>
         <!-- <router-view/> -->
     </div>
@@ -46,6 +46,11 @@ export default {
         showHide:function(flag) {
             this.isLoginShow = !flag;
             this.isRegisterShow = flag;
+        },
+
+        showRegister:function(flag) {
+            this.isLoginShow = flag;
+            this.isRegisterShow = !flag;
         }
     },
 
